@@ -22,3 +22,23 @@ Thank you for coming to our tech-interview test page. Come and help us build gam
 ## Acknowledgements
 
 The Android, iOS, webdesign and frontend tests were completely designed by us, while the backend tests were shamesly ~~inspired~~ copied from the tests at one of our clients interview process, which our client had already found to be really great at another client. :)
+
+## Project Documentation
+### How to run
+```
+git clone https://github.com/dutraleonardo/work-at-joyjet
+cd work-at-joyjet
+pip install -r requirements.txt
+python run.py
+```
+
+### MongoDB
+* Make sure you have mongoDB installed and running
+* Set enviroment variable: ``` export MONGO_URI=mongodb://yourmongodb:27017/dbname ```
+* Create a collection named cart_checkout
+
+### How to test?
+* Send a POST request to API endpoint ``` /cart_checkout ```
+* Put the json on body request
+* Check response
+* Check mongodb collection
