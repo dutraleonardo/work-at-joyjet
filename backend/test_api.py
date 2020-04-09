@@ -22,26 +22,26 @@ def load_data(filepath):
 
 def test_level1(testing_client):
 
-    data = load_data('../level1/data.json')
+    data = load_data('./level1/data.json')
     response = testing_client.post('/cart_checkout', json=data)
-    output = load_data('../level1/output.json')
+    output = load_data('./level1/output.json')
     assert response.status_code == 200
     assert output == response.get_json()
 
 
 def test_level2(testing_client):
 
-    data = load_data('../level2/data.json')
+    data = load_data('./level2/data.json')
     response = testing_client.post('/cart_checkout', json=data)
-    output = load_data('../level2/output.json')
+    output = load_data('./level2/output.json')
     assert response.status_code == 200
     assert output == response.get_json()
 
 
 def test_level3(testing_client):
 
-    data = load_data('../level3/data.json')
+    data = load_data('./level3/data.json')
     response = testing_client.post('/cart_checkout', json=data)
-    output = load_data('../level3/output.json')
+    output = load_data('./level3/output.json')
     assert response.status_code == 200
     assert output == response.get_json()
