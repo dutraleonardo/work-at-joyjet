@@ -42,3 +42,4 @@ python run.py
 * Put the json on body request
 * Check response
 * Check mongodb collection
+* On app/ folder run: ```pytest``` to execute tests
