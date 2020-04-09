@@ -1,3 +1,4 @@
+import os
 import datetime
 import json
 import logging
@@ -36,8 +37,12 @@ def get_fees(fees):
 
 def create_app(config=None):
     app = Flask(__name__)
-    app.config['MONGO_URI'] = 'mongodb://localhost:27017/joyjet'
-    mongo = PyMongo(app)
+    try:
+        app.config['MONGO_URI'] = os.environ.get("MONGO_URI")
+        mongo = PyMongo(app)
+    except EnvironmentError as error:
+        print("Error: {0}".format(error))
+
     app.json_encoder = JSONEncoder
     if config == 'TEST':
         app.config['TEST'] = True
